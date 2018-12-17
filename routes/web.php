@@ -18,3 +18,15 @@ Route::get('/', function () {
 Route::get('/profiles', function () {
     return view('profiles');
 });
+
+Route::get('/myarticles', function () {
+    return view('myarticles');
+});
+
+Route::get('/addmyarticle', function () {
+    return view('addmyarticle');
+});
+
+Route::get('/passwordreset', function () {
+    return view('passwordreset');
+});

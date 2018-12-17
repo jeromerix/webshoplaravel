@@ -1,10 +1,11 @@
 <!doctype html>
+@extends('layout')
+
+@section('title','welcomepage')
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Welcome page</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -77,14 +78,41 @@
         </div>
 
         <div class="links">
-            <a href="https://laravel.com/docs">my articles</a>
-            <a href="https://laracasts.com">sell an item</a>
-            <a href="https://laravel-news.com">password reset</a>
-            <a href="https://nova.laravel.com">users</a>
-            <a href="https://forge.laravel.com">logout</a>
+            <a href="/myarticles">my articles</a>
+            <a href="/addmyarticle">sell an item</a>
+            <a href="/passwordreset">password reset</a>
+            <a href="/profiles">users</a>
+            <a href="">logout</a>
         </div>
     </div></header>
     <body>
+      <div class="test">
+	 <h2>Hi, <b></b>. Welcome to buy online</h2>
+	<form action="welcome.php" method="post">
+	<input type="text" name="valueToSearch" placeholder="search" class="form-control"><br>
+	<div class='filterbackbutton'>
+	<input type="submit" name="search" value="filter" class="btn btn-default">
+	&nbsp;
+	<a href='welcome.php'>reset</a>
+</div><table class="table table-striped">
+	<tr>
+	<br><th>seller</th>
+		<th>price</th>
+		<th>articles</th>
+		<th>info</th>
+		<th>timestamp</th>
+	</tr>
+	<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	</tr>
+</table>
+</form></div>
+</body>
+</html>
 
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
