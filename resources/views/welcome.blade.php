@@ -78,16 +78,26 @@
         </div>
 
         <div class="links">
+                      @if (Route::has('login'))
+                      @auth
+           <a href="{{ url('/home') }}">Home</a>
+                      @else
+           <a href="{{ route('login') }}">Login</a>
+                      @if (Route::has('register'))
+           <a href="{{ route('register') }}">Register</a>
+                      @endif
+                      @endauth
+                      @endif
             <a href="/myarticles">my articles</a>
             <a href="/addmyarticle">sell an item</a>
             <a href="/passwordreset">password reset</a>
             <a href="/profiles">users</a>
-            <a href="">logout</a>
+            <a href="http://127.0.0.1:8000/logout">logout</a>
         </div>
     </div></header>
     <body>
       <div class="test">
-	 <h2>Hi, <b></b>. Welcome to buy online</h2>
+	 <h2>Hi, <b>{{Auth::user()->name}}</b>. Welcome to Buy Online</h2>
 	<form action="welcome.php" method="post">
 	<input type="text" name="valueToSearch" placeholder="search" class="form-control"><br>
 	<div class='filterbackbutton'>
@@ -113,21 +123,5 @@
 </form></div>
 </body>
 </html>
-
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </div>
     </body>
 </html>

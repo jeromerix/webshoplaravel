@@ -30,3 +30,9 @@ Route::get('/addmyarticle', function () {
 Route::get('/passwordreset', function () {
     return view('passwordreset');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
