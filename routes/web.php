@@ -35,4 +35,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/addmyarticles', 'insertarticle@index');
+
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
