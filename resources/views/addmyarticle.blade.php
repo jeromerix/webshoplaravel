@@ -10,7 +10,8 @@
 <body>
 <!--- form to insert articles ----------->
 	<div class="form-group">
-	<form action="insertinproducts.php" method="post">
+	<form action="{{ route('storearticle') }}" method="post">
+		@csrf
 	<label>Price:</label><br><input type="number" name="price" class="form-control"><br>
 	<label>Article:</label><br><input type="text" name="articles" class="form-control"><br>
 	<label>Description:</label><br><textarea name="info" value="info" class="form-control" rows="5" id="comment"></textarea><br>

@@ -27,6 +27,8 @@ Route::get('/addmyarticle', function () {
     return view('addmyarticle');
 });
 
+Route::post('/addmyarticle', 'InsertarticlesController@store')->name('storearticle');
+
 Route::get('/passwordreset', function () {
     return view('passwordreset');
 });
@@ -34,7 +36,5 @@ Route::get('/passwordreset', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::post('/addmyarticles', 'insertarticle@index');
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
